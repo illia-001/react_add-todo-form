@@ -26,6 +26,8 @@ export const App = () => {
   const [hasTitleError, setHasTitleError] = useState(false);
   const [hasUserError, setHasUserError] = useState(false);
 
+  const maxId: number = Math.max(...todosList.map(todo => todo.id));
+
   function reset() {
     setTitle('');
     setUserId(0);
@@ -64,8 +66,6 @@ export const App = () => {
     if (!selectedUser) {
       return;
     }
-
-    const maxId: number = Math.max(...todosList.map(todo => todo.id));
 
     const newTodo: TodoUser = {
       id: maxId + 1,
