@@ -65,7 +65,7 @@ export const App = () => {
       return;
     }
 
-    const maxId: number = Math.max(...todos.map(todo => todo.id));
+    const maxId: number = Math.max(...todosList.map(todo => todo.id));
 
     const newTodo: TodoUser = {
       id: maxId + 1,
