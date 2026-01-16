@@ -17,7 +17,6 @@ const todos: TodoUser[] = todosFromServer.map(todoFromServer => {
   };
 });
 
-const maxId: number = Math.max(...todos.map(todo => todo.id));
 const pattern = /[^a-zA-Zа-яА-Я0-9ІіЇїҐґЄє ]/g;
 
 export const App = () => {
@@ -65,6 +64,8 @@ export const App = () => {
     if (!selectedUser) {
       return;
     }
+
+    const maxId: number = Math.max(...todos.map(todo => todo.id));
 
     const newTodo: TodoUser = {
       id: maxId + 1,
